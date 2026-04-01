@@ -1,15 +1,12 @@
 .header {
-  height: 80px;
+  height: 90px;
   background-color: var(--background);
-  border-bottom: 24px solid var(--primary-deep); /* Thicker border on top of header? No wait, usually it's a top bar. 
-  Let's do a top bar like the mockup. */
-  border-top: 40px solid var(--primary-blue);
+  border-bottom: 1px solid var(--border-light);
   position: sticky;
   top: 0;
   z-index: 100;
   display: flex;
   align-items: center;
-  box-shadow: var(--shadow-sm);
   transition: var(--transition);
 }
 
@@ -20,24 +17,10 @@
   flex: 1;
 }
 
-.logoGroup {
-  flex-shrink: 0;
-}
-
 .logo {
   display: flex;
   align-items: center;
   gap: 12px;
-}
-
-.logoIcon {
-  color: var(--accent-emerald);
-  background-color: var(--bg-soft);
-  padding: 8px;
-  border-radius: var(--border-radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .logoText {
@@ -46,44 +29,50 @@
 }
 
 .journalAbbr {
+  font-family: var(--font-serif);
   font-weight: 800;
-  font-size: 1.5rem;
-  color: var(--primary-blue);
+  font-size: 1.8rem;
+  color: var(--primary-navy);
   line-height: 1;
 }
 
 .journalFull {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
-  font-weight: 500;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
 }
 
 .navList {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .navLink {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: var(--primary-blue);
+  color: var(--text-main);
   padding: 0.5rem 0;
   position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
 }
 
 .navLink:after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--accent-emerald);
+  background-color: var(--primary-navy);
   transition: var(--transition);
 }
 
 .navLink:hover {
-  color: var(--accent-emerald);
+  color: var(--primary-navy);
 }
 
 .navLink:hover:after {
@@ -96,49 +85,26 @@
   gap: 1.5rem;
 }
 
-.searchBar {
-  display: flex;
-  align-items: center;
-  background-color: var(--bg-soft);
-  border: 1px solid var(--border-light);
-  border-radius: var(--border-radius);
-  padding: 0.25rem 0.5rem 0.25rem 0.75rem;
-  transition: var(--transition);
-}
-
-.searchBar:focus-within {
-  border-color: var(--accent-emerald);
-  box-shadow: 0 0 0 3px rgba(0, 158, 96, 0.1);
-  background-color: white;
-}
-
-.searchInput {
-  background: none;
-  border: none;
-  padding: 0.25rem;
-  font-size: 0.875rem;
-  color: var(--text-main);
-  outline: none;
-  width: 180px;
-}
-
 .searchBtn {
   background: none;
   border: none;
   color: var(--text-muted);
   cursor: pointer;
-  padding: 0.25rem;
+  padding: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
+  transition: var(--transition);
 }
 
 .searchBtn:hover {
-  color: var(--accent-emerald);
+  background-color: var(--bg-soft);
+  color: var(--primary-navy);
 }
 
 @media (max-width: 1024px) {
   .nav {
-    display: none; /* Mobile menu should be implemented later */
+    display: none;
   }
 }

@@ -5,21 +5,22 @@ export default function Hero() {
     <section className={styles.hero}>
       <div className={styles.heroOverlay}></div>
       <div className={`container ${styles.heroContent}`}>
-        <div className={styles.heroBadge}>Leading Global Forum</div>
+        <div className={styles.heroBadge}>Academic Excellence Since 1988</div>
         <h1 className={styles.heroTitle}>
           Pakistan Journal of Pharmaceutical Sciences
         </h1>
         <p className={styles.heroSubtitle}>
-          Dedicated to the advancement and dissemination of pharmaceutical and biomedical research with academic excellence since 1988.
+          A world-class forum for the dissemination of pharmaceutical and biomedical research, 
+          recognized by HEC and indexed in Web of Science and Scopus.
         </p>
         <div className={styles.heroActions}>
           <button className="btn btn-primary">Submit Manuscript</button>
-          <button className="btn btn-outline">Browse Current Issue</button>
+          <button className="btn btn-outline">Current Issue</button>
         </div>
         
         <div className={styles.statsStrip}>
           <div className={styles.statItem}>
-            <span className={styles.statValue}>0.6</span>
+            <span className={styles.statValue}>0.601</span>
             <span className={styles.statLabel}>Impact Factor</span>
           </div>
           <div className={styles.statItem}>
@@ -31,8 +32,8 @@ export default function Hero() {
             <span className={styles.statLabel}>ISSN (Print)</span>
           </div>
           <div className={styles.statItem}>
-            <span className={styles.statValue}>5875+</span>
-            <span className={styles.statLabel}>Total Publications</span>
+            <span className={styles.statValue}>6,000+</span>
+            <span className={styles.statLabel}>Publications</span>
           </div>
         </div>
       </div>

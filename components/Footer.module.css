@@ -1,8 +1,8 @@
 .footer {
-  background-color: var(--primary-deep);
-  color: #ffffff;
+  background-color: var(--bg-soft);
+  color: var(--text-main);
   padding: 80px 0 0 0;
-  margin-top: auto;
+  border-top: 1px solid var(--border-light);
 }
 
 .footerContent {
@@ -20,71 +20,59 @@
 .footerLogo {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .logoAbbr {
+  font-family: var(--font-serif);
   font-weight: 800;
-  font-size: 2rem;
-  line-height:1;
-  color: #ffffff;
-  letter-spacing: -0.025em;
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--primary-navy);
+  letter-spacing: -0.02em;
 }
 
 .logoFull {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.7);
-  font-weight: 500;
-  margin-top: 4px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 6px;
 }
 
 .footerDesc {
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 30px;
+  color: var(--text-main);
+  margin-bottom: 24px;
 }
 
-.socialLinks {
-  display: flex;
-  gap: 15px;
-}
-
-.socialIcon {
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
+.accreditation {
   font-size: 0.8rem;
-  font-weight: bold;
-  transition: var(--transition);
-}
-
-.socialIcon:hover {
-  background-color: var(--accent-emerald);
-  border-color: var(--accent-emerald);
+  font-weight: 700;
+  color: var(--primary-navy);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
 }
 
 .sectionTitle {
-  font-size: 1.1rem;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
   font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 25px;
+  color: var(--primary-navy);
+  margin-bottom: 24px;
   position: relative;
-  padding-bottom: 10px;
 }
 
 .sectionTitle:after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -8px;
   left: 0;
-  width: 40px;
+  width: 30px;
   height: 2px;
-  background-color: var(--accent-emerald);
+  background-color: var(--primary-navy);
 }
 
 .linkList {
@@ -94,36 +82,40 @@
 }
 
 .linkList li a {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-muted);
   font-size: 0.95rem;
   transition: var(--transition);
 }
 
 .linkList li a:hover {
-  color: var(--accent-emerald);
-  transform: translateX(5px);
+  color: var(--primary-navy);
+  transform: translateX(4px);
 }
 
 .contactList {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 1.5rem;
 }
 
 .contactList li {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-main);
   font-size: 0.9rem;
   line-height: 1.6;
 }
 
 .contactList li strong {
-  color: #ffffff;
+  color: var(--primary-navy);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
 }
 
 .bottomBar {
-  background-color: rgba(0, 0, 0, 0.2);
-  padding: 25px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: var(--background);
+  padding: 30px 0;
+  border-top: 1px solid var(--border-light);
 }
 
 .bottomContent {
@@ -131,7 +123,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-muted);
 }
 
 .bottomLinks {
@@ -141,22 +133,16 @@
 }
 
 .separator {
-  opacity: 0.2;
+  opacity: 0.3;
 }
 
 .bottomLinks a:hover {
-  color: #ffffff;
+  color: var(--primary-navy);
 }
 
 @media (max-width: 768px) {
   .footerContent {
     grid-template-columns: 1fr;
     gap: 40px;
-  }
-  
-  .bottomContent {
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
   }
 }

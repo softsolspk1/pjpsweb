@@ -13,42 +13,41 @@ export default function Footer() {
             <span className={styles.logoFull}>Pakistan Journal of Pharmaceutical Sciences</span>
           </div>
           <p className={styles.footerDesc}>
-            A leading global forum for pharmaceutical and biomedical research, 
-            published by the Faculty of Pharmacy and Pharmaceutical Sciences, University of Karachi.
+            The Pakistan Journal of Pharmaceutical Sciences (PJPS) is a peer-reviewed monthly journal 
+            dedicated to the advancement of pharmaceutical and biomedical sciences.
           </p>
-          <div className={styles.socialLinks}>
-            <a href="#" className={styles.socialIcon}>FB</a>
-            <a href="#" className={styles.socialIcon}>TW</a>
-            <a href="#" className={styles.socialIcon}>LI</a>
+          <div className={styles.accreditation}>
+            <span>Indexed in Scopus, Web of Science, & PubMed</span>
           </div>
         </div>
 
         <div className={styles.footerSection}>
-          <h4 className={styles.sectionTitle}>About Journal</h4>
+          <h4 className={styles.sectionTitle}>Information</h4>
           <ul className={styles.linkList}>
-            <li><Link href="/policy">Editorial Policy</Link></li>
-            <li><Link href="/metrics">Journal Metrics</Link></li>
-            <li><Link href="/indexing">Indexing & Abstracting</Link></li>
-            <li><Link href="/ethics">Publication Ethics</Link></li>
-            <li><Link href="/openaccess">Open Access Policy</Link></li>
+            <li><Link href="/board">Editorial Board</Link></li>
+            <li><Link href="/submission">Instructions for Authors</Link></li>
+            <li><Link href="/archive">Journal Archive</Link></li>
+            <li><Link href="/policy">Editorial Policies</Link></li>
+            <li><Link href="/contact">Contact Us</Link></li>
           </ul>
         </div>
 
         <div className={styles.footerSection}>
-          <h4 className={styles.sectionTitle}>Contact Info</h4>
+          <h4 className={styles.sectionTitle}>Editorial Office</h4>
           <ul className={styles.contactList}>
             <li>
               <strong>Address:</strong><br />
-              Faculty of Pharmacy, University of Karachi, Pakistan.
+              Faculty of Pharmacy and Pharmaceutical Sciences, 
+              University of Karachi, Karachi-75270, Pakistan.
             </li>
             <li>
-              <strong>Email:</strong><br />
+              <strong>Queries:</strong><br />
               pjps@uok.edu.pk<br />
               pakjps@hotmail.com
             </li>
             <li>
-              <strong>Phone:</strong><br />
-              +92-21-99261300-15
+              <strong>Submissions:</strong><br />
+              submissions@pjps.pk
             </li>
           </ul>
         </div>
@@ -56,11 +55,11 @@ export default function Footer() {
       
       <div className={styles.bottomBar}>
         <div className={`container ${styles.bottomContent}`}>
-          <p>© {currentYear} Pakistan Journal of Pharmaceutical Sciences. All rights reserved.</p>
+          <p>© {currentYear} Pakistan Journal of Pharmaceutical Sciences. Published by the University of Karachi.</p>
           <div className={styles.bottomLinks}>
-            <Link href="/terms">Terms of Service</Link>
+            <Link href="/terms">Terms</Link>
             <span className={styles.separator}>|</span>
-            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/privacy">Privacy</Link>
           </div>
         </div>
       </div>
