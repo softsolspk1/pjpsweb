@@ -1,0 +1,90 @@
+.articleCard {
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.category {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-emerald);
+  background-color: rgba(0, 158, 96, 0.1);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  color: var(--primary-blue);
+  flex-grow: 0;
+}
+
+.title a:hover {
+  color: var(--accent-emerald);
+}
+
+.authors {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+.doiGroup {
+  display: flex;
+  gap: 4px;
+  font-size: 0.75rem;
+}
+
+.doiLabel {
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.doiValue {
+  color: var(--text-main);
+}
+
+.readMore {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-emerald);
+}
+
+.readMore:hover {
+  gap: 8px;
+}
+
+.readMore svg {
+  transition: var(--transition);
+}

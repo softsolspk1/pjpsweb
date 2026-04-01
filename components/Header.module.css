@@ -1,0 +1,144 @@
+.header {
+  height: 80px;
+  background-color: var(--background);
+  border-bottom: 24px solid var(--primary-deep); /* Thicker border on top of header? No wait, usually it's a top bar. 
+  Let's do a top bar like the mockup. */
+  border-top: 40px solid var(--primary-blue);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.logoGroup {
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoIcon {
+  color: var(--accent-emerald);
+  background-color: var(--bg-soft);
+  padding: 8px;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.journalAbbr {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--primary-blue);
+  line-height: 1;
+}
+
+.journalFull {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.navList {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navLink {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.navLink:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-emerald);
+  transition: var(--transition);
+}
+
+.navLink:hover {
+  color: var(--accent-emerald);
+}
+
+.navLink:hover:after {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-soft);
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius);
+  padding: 0.25rem 0.5rem 0.25rem 0.75rem;
+  transition: var(--transition);
+}
+
+.searchBar:focus-within {
+  border-color: var(--accent-emerald);
+  box-shadow: 0 0 0 3px rgba(0, 158, 96, 0.1);
+  background-color: white;
+}
+
+.searchInput {
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--text-main);
+  outline: none;
+  width: 180px;
+}
+
+.searchBtn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchBtn:hover {
+  color: var(--accent-emerald);
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    display: none; /* Mobile menu should be implemented later */
+  }
+}

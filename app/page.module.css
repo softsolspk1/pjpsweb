@@ -1,0 +1,124 @@
+.home {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.sectionSubtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.articlesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.viewMore {
+  display: flex;
+  justify-content: center;
+}
+
+.indexingSection {
+  background-color: var(--bg-soft);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.indexingGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.indexItem {
+  padding: 24px 12px;
+  background-color: white;
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius);
+  font-weight: 700;
+  color: var(--primary-deep);
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.indexItem:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-emerald);
+  box-shadow: var(--shadow-md);
+}
+
+.aboutJournal {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.aboutText h2 {
+  font-size: 2.5rem;
+  margin-bottom: 24px;
+}
+
+.aboutText p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: var(--text-muted);
+}
+
+.aboutStats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.aboutStat {
+  background-color: var(--primary-blue);
+  color: white;
+  padding: 30px;
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+.statNum {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .articlesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .indexingGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutJournal {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .indexingGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
