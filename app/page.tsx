@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect } from 'react';
 import Hero from "@/components/Hero";
 import ArticleCard from "@/components/ArticleCard";
 import styles from "./page.module.css";
@@ -38,11 +41,30 @@ const LATEST_ARTICLES = [
 ];
 
 export default function Home() {
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(styles.visible);
+        }
+      });
+    }, observerOptions);
+
+    const revealElements = document.querySelectorAll(`.${styles.reveal}`);
+    revealElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className={styles.home}>
       <Hero />
       
-      <section className="section-padding container">
+      <section className={`${styles.reveal} section-padding container`}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>Latest Research</h2>
           <p className={styles.sectionSubtitle}>Discover the most recent peer-reviewed contributions to the pharmaceutical sciences.</p>
@@ -53,54 +75,78 @@ export default function Home() {
           ))}
         </div>
         <div className={styles.viewMore}>
-          <button className="btn btn-secondary">Browse Archive</button>
+          <button className="btn btn-secondary">Browse Full Archive</button>
         </div>
       </section>
 
-      <section className={`${styles.indexingSection} section-padding`}>
+      <section className={`${styles.indexingSection} ${styles.reveal} section-padding`}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Global Indexing & Accreditation</h2>
+            <span className={styles.preTitle}>Trusted Globally</span>
+            <h2 className={styles.sectionTitle}>Scientific Impact & Recognition</h2>
             <p className={styles.sectionSubtitle}>PJPS is recognized and abstracted by the world's most prestigious scientific databases.</p>
           </div>
           <div className={styles.indexingGrid}>
-            <div className={styles.indexItem}>Scopus (Elsevier)</div>
-            <div className={styles.indexItem}>Web of Science (Clarivate)</div>
-            <div className={styles.indexItem}>PubMed / MEDLINE</div>
-            <div className={styles.indexItem}>EMBASE</div>
-            <div className={styles.indexItem}>DOAJ</div>
-            <div className={styles.indexItem}>CABI</div>
+            <div className={styles.indexItem}>
+              <div className={styles.indexIcon}>S</div>
+              <span>Scopus (Elsevier)</span>
+            </div>
+            <div className={styles.indexItem}>
+              <div className={styles.indexIcon}>W</div>
+              <span>Web of Science</span>
+            </div>
+            <div className={styles.indexItem}>
+              <div className={styles.indexIcon}>P</div>
+              <span>PubMed / MEDLINE</span>
+            </div>
+            <div className={styles.indexItem}>
+              <div className={styles.indexIcon}>E</div>
+              <span>EMBASE</span>
+            </div>
+            <div className={styles.indexItem}>
+              <div className={styles.indexIcon}>D</div>
+              <span>DOAJ</span>
+            </div>
+            <div className={styles.indexItem}>
+              <div className={styles.indexIcon}>C</div>
+              <span>CABI</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="section-padding container">
+      <section className={`${styles.reveal} section-padding container`}>
         <div className={styles.aboutJournal}>
           <div className={styles.aboutText}>
-            <h2>About PJPS</h2>
+            <span className={styles.preTitle}>Our Heritage</span>
+            <h2>Established Excellence</h2>
             <p>
-              The <strong>Pakistan Journal of Pharmaceutical Sciences (PJPS)</strong> is a peer-reviewed multi-disciplinary 
-              pharmaceutical sciences journal. Established in 1988 by the <strong>Faculty of Pharmacy and Pharmaceutical Sciences, 
-              University of Karachi</strong>, it provides a prestigious platform for researchers worldwide.
+              The <strong>Pakistan Journal of Pharmaceutical Sciences (PJPS)</strong> is a peer-reviewed 
+              multi-disciplinary pharmaceutical sciences journal. Founded in 1988 by the 
+              <strong> Faculty of Pharmacy and Pharmaceutical Sciences, University of Karachi</strong>, 
+              it stands as a premier platform for global scientific discourse.
             </p>
             <p>
-              The journal covers an expansive range of topics including Biological and Pharmaceutical sciences, 
-              Drug Delivery, Pharmacy Management, Biopharmaceutics, Pharmacokinetics, and AI-associated innovations in pharmacy.
+              Our mission is to foster innovation across drug delivery, pharmacology, and clinical research, 
+              maintaining a fully open-access policy that ensures unrestricted knowledge sharing worldwide.
             </p>
-            <p>
-              PJPS adheres to a fully open-access policy, ensuring that all published content is freely accessible 
-              to readers worldwide under the Creative Commons Attribution-Noncommercial 4.0 International License.
-            </p>
-            <button className="btn btn-primary">Learn More About Us</button>
-          </div>
-          <div className={styles.aboutStats}>
-            <div className={styles.aboutStat}>
-              <span className={styles.statNum}>35+</span>
-              <span className={styles.statLabel}>Years of Excellence</span>
+            <div className={styles.aboutActions}>
+              <button className="btn btn-primary">Learn more about us</button>
+              <button className="btn btn-outline">Editor-in-Chief Message</button>
             </div>
-            <div className={styles.aboutStat}>
-              <span className={styles.statNum}>HEC</span>
-              <span className={styles.statLabel}>Directly Recognized</span>
+          </div>
+          <div className={styles.aboutStatsGrid}>
+            <div className={styles.impactCard}>
+              <span className={styles.impactNum}>35+</span>
+              <span className={styles.impactLabel}>Years of Peer Review</span>
+            </div>
+            <div className={styles.impactCardGold}>
+              <span className={styles.impactNum}>HEC</span>
+              <span className={styles.impactLabel}>Platinum Category</span>
+            </div>
+            <div className={styles.impactCard}>
+              <span className={styles.impactNum}>100+</span>
+              <span className={styles.impactLabel}>Countries Represented</span>
             </div>
           </div>
         </div>
@@ -108,3 +154,4 @@ export default function Home() {
     </div>
   );
 }
+

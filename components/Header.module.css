@@ -1,13 +1,41 @@
 .header {
   height: 90px;
-  background-color: var(--background);
-  border-bottom: 1px solid var(--border-light);
-  position: sticky;
+  background-color: transparent;
+  position: fixed; /* Changed from sticky to fixed for better glass control */
   top: 0;
-  z-index: 100;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   display: flex;
   align-items: center;
   transition: var(--transition);
+  border-bottom: 1px solid transparent;
+}
+
+.scrolled {
+  height: 70px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+@media (prefers-color-scheme: dark) {
+  .scrolled {
+    background: rgba(10, 15, 26, 0.85);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+.progressBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--accent-gold);
+  z-index: 1001;
+  transition: width 0.1s ease-out;
 }
 
 .headerContent {
@@ -20,7 +48,17 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 15px;
+}
+
+.logoBadge {
+  background: var(--primary-navy);
+  color: white;
+  font-family: var(--font-serif);
+  font-weight: 900;
+  padding: 4px 8px;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
 }
 
 .logoText {
@@ -28,46 +66,46 @@
   flex-direction: column;
 }
 
-.journalAbbr {
+.journalFull {
   font-family: var(--font-serif);
-  font-weight: 800;
-  font-size: 1.8rem;
+  font-size: 0.95rem;
+  font-weight: 700;
   color: var(--primary-navy);
-  line-height: 1;
+  line-height: 1.2;
 }
 
-.journalFull {
-  font-size: 0.7rem;
+.faculty {
+  font-size: 0.65rem;
   color: var(--text-muted);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   margin-top: 2px;
 }
 
 .navList {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .navLink {
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 700;
   color: var(--text-main);
   padding: 0.5rem 0;
   position: relative;
   text-transform: uppercase;
-  letter-spacing: 0.025em;
+  letter-spacing: 0.12em;
 }
 
 .navLink:after {
   content: "";
   position: absolute;
-  bottom: 0px;
+  bottom: -2px;
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--primary-navy);
+  background-color: var(--accent-gold);
   transition: var(--transition);
 }
 
@@ -101,6 +139,12 @@
 .searchBtn:hover {
   background-color: var(--bg-soft);
   color: var(--primary-navy);
+  transform: scale(1.1);
+}
+
+.cta {
+  padding: 0.7rem 1.4rem;
+  font-size: 0.75rem;
 }
 
 @media (max-width: 1024px) {
@@ -108,3 +152,4 @@
     display: none;
   }
 }
+

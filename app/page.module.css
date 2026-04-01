@@ -5,26 +5,41 @@
 
 .sectionHeader {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.preTitle {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-gold);
+  margin-bottom: 12px;
 }
 
 .sectionTitle {
   font-family: var(--font-serif);
-  font-size: 2.8rem;
-  margin-bottom: 12px;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
   color: var(--primary-navy);
+  line-height: 1.1;
 }
 
 .sectionSubtitle {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   color: var(--text-muted);
+  line-height: 1.6;
 }
 
 .articlesGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  margin-bottom: 50px;
+  gap: 40px;
+  margin-bottom: 60px;
 }
 
 .viewMore {
@@ -36,84 +51,163 @@
   background-color: var(--bg-soft);
   border-top: 1px solid var(--border-light);
   border-bottom: 1px solid var(--border-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.indexingSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(var(--border-medium) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.2;
 }
 
 .indexingGrid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 20px;
+  gap: 24px;
 }
 
 .indexItem {
-  padding: 30px 15px;
+  padding: 40px 20px;
   background-color: white;
   border: 1px solid var(--border-light);
   border-radius: var(--border-radius);
-  font-weight: 700;
   color: var(--primary-navy);
-  font-size: 0.85rem;
   text-align: center;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 20px;
   box-shadow: var(--shadow-subtle);
   transition: var(--transition);
 }
 
+.indexItem span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.indexIcon {
+  width: 50px;
+  height: 50px;
+  background: var(--bg-accent-light);
+  color: var(--primary-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 900;
+  border-radius: 50%;
+  border: 1px solid var(--border-medium);
+}
+
 .indexItem:hover {
-  transform: translateY(-4px);
-  border-color: var(--primary-navy);
-  box-shadow: var(--shadow-standard);
+  transform: translateY(-8px);
+  border-color: var(--accent-gold);
+  box-shadow: var(--shadow-premium);
+}
+
+.indexItem:hover .indexIcon {
+  background: var(--primary-navy);
+  color: white;
 }
 
 .aboutJournal {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 80px;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 100px;
   align-items: center;
 }
 
 .aboutText h2 {
   font-family: var(--font-serif);
-  font-size: 3rem;
-  margin-bottom: 30px;
+  font-size: 3.5rem;
+  margin-bottom: 32px;
+  line-height: 1.1;
 }
 
 .aboutText p {
-  font-size: 1.1rem;
-  margin-bottom: 24px;
+  font-size: 1.15rem;
+  margin-bottom: 28px;
   color: var(--text-main);
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
-.aboutStats {
+.aboutActions {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.aboutStatsGrid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
-.aboutStat {
-  background-color: var(--primary-navy);
-  color: white;
-  padding: 40px;
+.impactCard, .impactCardGold {
+  padding: 40px 30px;
+  border: 1px solid var(--border-light);
   border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.impactCard {
+  background: white;
+  box-shadow: var(--shadow-subtle);
+}
+
+.impactCardGold {
+  background: var(--primary-navy);
+  color: white;
+  grid-column: span 2;
   text-align: center;
 }
 
-.statNum {
+.impactNum {
   display: block;
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 6px;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 8px;
   font-family: var(--font-serif);
+  line-height: 1;
 }
 
-.statLabel {
-  font-size: 0.85rem;
-  opacity: 0.85;
+.impactCardGold .impactNum {
+  color: var(--accent-gold);
+}
+
+.impactLabel {
+  font-size: 0.75rem;
+  opacity: 0.8;
   text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
+}
+
+/* Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media (max-width: 1024px) {
@@ -129,7 +223,7 @@
 @media (max-width: 768px) {
   .aboutJournal {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 60px;
   }
   
   .indexingGrid {
@@ -137,6 +231,15 @@
   }
   
   .sectionTitle {
-    font-size: 2.2rem;
+    font-size: 2.8rem;
+  }
+  
+  .impactCardGold {
+    grid-column: span 1;
+  }
+  
+  .aboutStatsGrid {
+    grid-template-columns: 1fr;
   }
 }
+
